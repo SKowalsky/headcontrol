@@ -10,11 +10,11 @@ import imutils
 import dlib
 import cv2
 
-SKIP_FRAMES = 3  # only process every nth frame
 FRAME_WIDTH = 400  # width of downscaled frame
 FRAME_HEIGHT = 225  # height of downscaled frame
-EYE_AR_THRESH = 0.2  # minimum threshold for eye aspect ration to register blink
-EYE_AR_CONSEC_FRAMES = 1  # number of consecutive frames the eye must be below the threshold
+SKIP_FRAMES = 1  # only process every nth frame
+EYE_AR_THRESH = 0.25  # minimum threshold for eye aspect ration to register blink
+EYE_AR_CONSEC_FRAMES = 2  # number of consecutive frames the eye must be below the threshold
 
 
 # function to calculate eye aspect ratio
@@ -226,12 +226,10 @@ while True:
             # add pose estimation
             focal_length = size[1]
             center = (size[1] / 2, size[0] / 2)
-            camera_matrix = np.array([[focal_length, 0, center[0]], [0, focal_length, center[1]], [0, 0, 1]],
-                                     dtype="double")
+            camera_matrix = np.array([[focal_length, 0, center[0]], [0, focal_length, center[1]], [0, 0, 1]], dtype="double")
 
             dist_coeffs = np.zeros((4, 1))  # assuming no lens distortion
-            (success, rotation_vector, translation_vector) = cv2.solvePnP(model_points, image_points, camera_matrix,
-                                                                          dist_coeffs, flags=cv2.SOLVEPNP_ITERATIVE)
+            (success, rotation_vector, translation_vector) = cv2.solvePnP(model_points, image_points, camera_matrix, dist_coeffs, flags=cv2.SOLVEPNP_ITERATIVE)
 
             # print("Camera Matrix :\n {0}".format(camera_matrix))
             # print("Rotation Vector:\n {0}".format(rotation_vector))
