@@ -12,10 +12,8 @@ import cv2
 
 FRAME_WIDTH = 400  # width of downscaled frame
 FRAME_HEIGHT = 225  # height of downscaled frame
-SKIP_FRAMES = 1  # only process every nth frame
 EYE_AR_THRESH = 0.25  # minimum threshold for eye aspect ration to register blink
 EYE_AR_CONSEC_FRAMES = 2  # number of consecutive frames the eye must be below the threshold
-
 
 # function to calculate eye aspect ratio
 def eye_aspect_ratio(eye):
@@ -80,12 +78,6 @@ counter = 0  # frame counter
 total = 0  # total number of blinks
 
 while True:
-
-    # skip every Nth frame
-    skipf += 1
-    if skipf < SKIP_FRAMES:
-        continue
-    skipf = 0
 
     # capture image
     ret, image = cap.read()

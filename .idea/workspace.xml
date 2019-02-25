@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9979d786-b823-4a9a-884d-0d86e137f340" name="Default Changelist" comment="init">
-      <change beforePath="$PROJECT_DIR$/.idea/headpose.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/headpose.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="9979d786-b823-4a9a-884d-0d86e137f340" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/python/headcontrol.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/headcontrol.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_blink.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_headcontrol.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_headpose.sh" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,15 +11,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/headpose$headcontrol.coverage" NAME="headcontrol Coverage Results" MODIFIED="1551084265697" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/headpose$headcontrol.coverage" NAME="headcontrol Coverage Results" MODIFIED="1551086688484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/python/headcontrol.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="125">
+              <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
               <folding>
                 <element signature="e#23#53#0" expanded="true" />
               </folding>
@@ -179,7 +173,7 @@
       <workItem from="1550323620791" duration="2938000" />
       <workItem from="1550329344173" duration="160000" />
       <workItem from="1550412701143" duration="997000" />
-      <workItem from="1551082932717" duration="1604000" />
+      <workItem from="1551082932717" duration="3239000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1550326616644</created>
@@ -188,21 +182,29 @@
       <option name="project" value="LOCAL" />
       <updated>1550326616645</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="removed start scripts">
+      <created>1551085439650</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1551085439650</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15799000" />
+    <option name="totallyTimeSpent" value="17434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12875536" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12875536" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21985815" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21985815" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -248,7 +250,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="removed start scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed start scripts" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file:///usr/local/lib/python3.7/site-packages/imutils/convenience.py">
@@ -316,8 +319,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/python/headcontrol.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="13" lean-forward="true" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        <state relative-caret-position="125">
+          <caret line="79" column="11" selection-start-line="79" selection-start-column="11" selection-end-line="79" selection-end-column="11" />
           <folding>
             <element signature="e#23#53#0" expanded="true" />
           </folding>
