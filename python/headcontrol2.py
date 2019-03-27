@@ -166,10 +166,6 @@ while cap.isOpened():
     # detect faces in the frame
     rects = detector(frame, 0)
 
-    # check to see if a face was detected
-    if len(rects) == 0:
-        continue
-
     # loop over all the detected faces
     for rect in rects:
 
