@@ -8,14 +8,14 @@ import dlib
 import cv2
 
 face_landmark_path = './shape_predictor_68_face_landmarks.dat'  # landmark predictor file
-DOWNSCALE_IMAGE = False     # downscale image
+DETECT_BLINK = True    # detect blinks
 DOWNSCALE_FACTOR = 1    # downscale factor (1 = 100%)
 EYE_AR_THRESH = 0.25  # minimum threshold for eye aspect ration to register blink
 
-Y_HIGH = 10
-Y_LOW = 10
-X_HIGH = 10
-X_LOW = 10
+Y_HIGH = 5
+Y_LOW = -5
+X_HIGH = 5
+X_LOW = -5
 
 # 3d model points (referenced from
 # http://aifi.isr.uc.pt/Downloads/OpenGL/glAnthropometric3DModel.cpp)
@@ -148,6 +148,7 @@ dist_coeffs = np.zeros((4, 1))  # assuming no lens distortion
 
 X = 200
 Y = 200
+ball_color = (255, 0, 0)
 
 while cap.isOpened():
 
@@ -160,8 +161,11 @@ while cap.isOpened():
         break
 
     # resize image to new resolution
-    if DOWNSCALE_IMAGE:
+    if DOWNSCALE_FACTOR != 1:
         frame = imutils.resize(frame, frame_width, frame_height)
+
+    # mirror the image
+    cv2.flip(frame, 1, frame)
 
     # detect faces in the frame
     rects = detector(frame, 0)
@@ -173,11 +177,6 @@ while cap.isOpened():
         # convert the facial landmark (x, y)-coordinates to a NumPy array
         shape = predictor(frame, rect)
         shape = face_utils.shape_to_np(shape)
-
-        #if eye_closed(shape):
-        #    cv2.circle(frame, (20, 100), 10, (0, 255, 0), -1)
-        #else:
-        #    cv2.circle(frame, (20, 100), 10, (0, 255, 0), 1)
 
         # call head pose function
         reprojectdst, euler_angle = get_head_pose(shape, camera_matrix)
@@ -198,6 +197,12 @@ while cap.isOpened():
         cv2.putText(frame, "Z: " + "{:7.2f}".format(euler_angle[2, 0]), (20, 60), cv2.FONT_HERSHEY_SIMPLEX,
                     0.50, (0, 0, 0), thickness=1)
 
+        if DETECT_BLINK:
+            if eye_closed(shape):
+                ball_color = (0, 255, 255)
+            else:
+                ball_color = (255, 0, 0)
+
         # draw moving circle
         if(euler_angle[0, 0] > Y_HIGH):
             Y += 5
@@ -209,7 +214,7 @@ while cap.isOpened():
         elif(euler_angle[1, 0] < X_LOW):
             X +=5
 
-        cv2.circle(frame, (X, Y), 20, (255, 0, 0), -1)
+        cv2.circle(frame, (X, Y), 20, ball_color, -1)
 
     cv2.imshow("Head Control", frame)
 
